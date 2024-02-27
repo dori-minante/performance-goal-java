@@ -37,7 +37,7 @@ public class Menu {
 			}
 
 			if (opcao == 9) {
-				System.out.println("\nMercado da Skina: Frescor que encanta, qualidade que alimenta!\n");
+				System.out.println("\nMercadinho da Skina: Frescor que encanta, qualidade que alimenta!\n");
 				sobre();
 				sc.close();
 				System.exit(0);
