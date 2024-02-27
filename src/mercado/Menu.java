@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import mercado.util.Cores;
 import mercado.model.Produto;
 import mercado.controller.ProdutoController;
 import mercado.model.Frutas;
@@ -23,7 +24,8 @@ public class Menu {
 
 		while (true) {
 
-			System.out.println("-----------------------------------------------------");
+			System.out.println(Cores.TEXT_BLUE + Cores.ANSI_BLACK_BACKGROUND
+					+"-----------------------------------------------------");
 			System.out.println("                                                     ");
 			System.out.println("               Mercadinho da Skina                   ");
 			System.out.println("                                                     ");
@@ -38,7 +40,7 @@ public class Menu {
 			System.out.println("                                                     ");
 			System.out.println("-----------------------------------------------------");
 			System.out.println("Entre com a opção desejada:                          ");
-			System.out.println("                                                     ");
+			System.out.println("                                                     " + Cores.TEXT_RESET);
 
 			try {
 				opcao = sc.nextInt();
