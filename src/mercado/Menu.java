@@ -17,9 +17,9 @@ public class Menu {
 
 		Scanner sc = new Scanner(System.in);
 
-		int opcao, id = 0, tipo = 0, gordura = 0, fibra = 0;
+		int opcao, id = 0, tipo = 0;
 		String nome = "";
-		double preco = 0;
+		double preco = 0, gordura = 0, fibra = 0;
 
 		while (true) {
 
@@ -74,12 +74,12 @@ public class Menu {
 				preco = sc.nextDouble();
 
 				if (tipo == 1) {
-					System.out.println("Qual o percentual de fibra? (Digite um número inteiro)");
-					fibra = sc.nextInt();
+					System.out.println("Qual o percentual de fibra?");
+					fibra = sc.nextDouble();
 					produtoController.criarProduto(new Frutas(id, tipo, nome, preco, fibra));
 				} else if (tipo == 2) {
-					System.out.println("Qual o percentual de gordura? (Digite um número inteiro)");
-					gordura = sc.nextInt();
+					System.out.println("Qual o percentual de gordura?");
+					gordura = sc.nextDouble();
 					produtoController.criarProduto(new Laticinios(id, tipo, nome, preco, gordura));
 				} else {
 					System.out.println("Tipo de produto inválido! Tente novamente.");
@@ -116,19 +116,23 @@ public class Menu {
 					String novoNome = sc.nextLine();
 
 					int tipoAtualizar = buscaProduto.getTipo();
+					System.out.println("Digite o novo preço do Produto: ");
+					sc.skip("\\R?");
+					double novoPreco = sc.nextDouble();
+					sc.nextLine();
 
 					if (tipoAtualizar == 1) {
 						System.out.println("Digite o novo percentual de fibra da fruta");
-						int novaFibra = sc.nextInt();
-						produtoController.atualizar(new Frutas(id, tipo, novoNome, preco, novaFibra));
+						double novaFibra = sc.nextDouble();
+						produtoController.atualizar(new Frutas(id, tipo, novoNome, novoPreco, novaFibra));
 					} else if (tipoAtualizar == 2) {
 						System.out.println("Digite o novo percentual de gordura do laticínio");
-						int novaGordura = sc.nextInt();
-						produtoController.atualizar(new Laticinios(id, tipo, novoNome, preco, novaGordura));
+						double novaGordura = sc.nextDouble();
+						produtoController.atualizar(new Laticinios(id, tipo, novoNome, novoPreco, novaGordura));
 					} else
 						System.out.println("\nProduto não encontrado!");
 				}
-				
+
 				keyPress();
 				break;
 			case 5:

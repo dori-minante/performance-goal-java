@@ -2,12 +2,12 @@ package mercado.model;
 
 public class Frutas extends Produto {
 	
-	int percentualFibras;
-	public Frutas(int id, int tipo, String nome, double preco, int percentualFibras) {
+	double percentualFibras;
+	public Frutas(int id, int tipo, String nome, double preco, double percentualFibras) {
 		super(id, tipo, nome, preco);
 		this.percentualFibras =  percentualFibras;
 	}
-	public int getPercentualFibras() {
+	public double getPercentualFibras() {
 		return percentualFibras;
 	}
 	public void setPercentualFibras(int percentualFibras) {

@@ -2,14 +2,14 @@ package mercado.model;
 
 public class Laticinios extends Produto {
 
-	int percentualGordura;
+	double percentualGordura;
 
-	public Laticinios(int id, int tipo, String nome, double preco, int percentualGordura) {
+	public Laticinios(int id, int tipo, String nome, double preco, double percentualGordura) {
 		super(id, tipo, nome, preco);
 		this.percentualGordura = percentualGordura;
 	}
 
-	public int getPercentualGordura() {
+	public double getPercentualGordura() {
 		return percentualGordura;
 	}
 
